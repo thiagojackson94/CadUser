@@ -28,17 +28,6 @@ namespace UsuarioBackEnd.Migrations
                 principalTable: "Escolaridade",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.InsertData(
-            table: "Escolaridade",
-            columns: new[] { "Descricao" },
-            values: new object[,]
-            {
-                { "Infantil" },
-                { "Fundamental" },
-                { "Médio" },
-                { "Superior" }
-            });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
