@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nome": "Thiago",
+    "sobrenome": "Jackson",
+    "email": "thiago@teste.com",
+    "dataNascimento": "2021-10-10",
+    "escolaridade": "infantil"
+  },
+  {
+    "id": 2,
+    "nome": "Bruno",
+    "sobrenome": "Jackson",
+    "email": "thiago@teste.com",
+    "dataNascimento": "2021-10-10",
+    "escolaridade": "infantil"
+  },
+  {
+    "id": 3,
+    "nome": "Pedro",
+    "sobrenome": "Jackson",
+    "email": "thiago@teste.com",
+    "dataNascimento": "2021-10-10",
+    "escolaridade": "infantil"
+  },
+  {
+    "id": 4,
+    "nome": "Rafel",
+    "sobrenome": "Jackson",
+    "email": "thiago@teste.com",
+    "dataNascimento": "2021-10-10",
+    "escolaridade": "infantil"
+  }
+]

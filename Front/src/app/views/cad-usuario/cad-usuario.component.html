@@ -1,0 +1,136 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="titulo text-center">{{ acao }} de Usuários</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="titulo text-center">Novo Usuário</h5>
+
+          <form [formGroup]="cadUsuarioForm" (ngSubmit)="salvarUsuario()">
+            <div class="input-group input-group-lg mb-3">
+              <div class="form-group col-12">
+                <label>Nome</label>
+                <input
+                  formControlName="nome"
+                  type="text"
+                  class="form-control text-Login text-center"
+                  placeholder="Nome"
+                />
+              </div>
+            </div>
+            <div class="input-group input-group-lg mb-3">
+              <div class="form-group col-12">
+                <label>Sobrenome</label>
+                <input
+                  formControlName="sobrenome"
+                  type="text"
+                  class="form-control text-Login text-center"
+                  placeholder="Sobrenome"
+                />
+              </div>
+            </div>
+            <div class="input-group input-group-lg mb-3">
+              <div class="form-group col-12">
+                <label>Email</label>
+                <input
+                  formControlName="email"
+                  type="email"
+                  name="email"
+                  class="form-control text-Login text-center"
+                  placeholder="Email"
+                />
+              </div>
+            </div>
+            <div class="input-group input-group-lg mb-3">
+              <div class="form-group col-12">
+                <label>Data de Nascimento</label>
+                <input
+                  formControlName="dataNascimento"
+                  type="date"
+                  id="dataNascimento"
+                  class="form-control text-Login text-center"
+                  placeholder="Data de Nascimento"
+                />
+              </div>
+            </div>
+            <div class="input-group input-group-lg mb-3">
+              <div class="form-group col-12">
+                <label>Escolaridade</label>
+                <select
+                  formControlName="escolaridade"
+                  type="select"
+                  class="form-control text-Login text-center"
+                  placeholder="Escolaridade"
+                >
+                  <option></option>
+                  <option *ngFor="let option of listaEscolaridade">
+                    {{ option.descricao }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="d-grid gap-2 form-group">
+              <button
+                [disabled]="!cadUsuarioForm.valid"
+                type="submit"
+                class="btn btn-success btn-lg"
+              >
+                Salvar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="titulo text-center">Lista de Usuários</h5>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Data de Nascimento</th>
+                <th scope="col">Escolaridade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usuario of listaUsuarios">
+                <td>{{ usuario.nome }}</td>
+                <td>{{ usuario.sobrenome }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.dataNascimento }}</td>
+                <td>{{ usuario.escolaridade }}</td>
+                <td>
+                  <i
+                    (click)="editarUsuario(usuario)"
+                    class="far fa-edit text-info"
+                    title="editar"
+                  ></i>
+                </td>
+                <td>
+                  <i
+                    (click)="deletarUsuario(usuario.id)"
+                    class="fa fa-trash-alt"
+                    title="excluir"
+                  ></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
